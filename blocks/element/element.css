@@ -1,0 +1,13 @@
+.element {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .element {
+    margin-bottom: 20px;
+  }
+  .element:last-of-type {
+    margin-bottom: 0;
+  }
+}
