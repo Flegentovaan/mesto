@@ -1,5 +1,5 @@
 const popupOpenEditBtn = document.querySelector('.profile__edit-button-opened');
-const popupTypeInfo = document.querySelector('.popup__type_info');
+const popupTypeInfo = document.querySelector('.popup');
 const popupCloseEditBtn = popupTypeInfo.querySelector('.popup__close');
 const popupInputName = popupTypeInfo.querySelector('.popup__input_name');
 const popupSubmit = popupTypeInfo.querySelector('.popup__submit');
@@ -8,25 +8,31 @@ const popupNameChange = document.querySelector('.profile__name');
 const popupInputDescription = popupTypeInfo.querySelector('.popup__input_description');
 const popupDescriptionChange = document.querySelector('.profile__description');
 
-popupOpenEditBtn.addEventListener('click', () => {
-  console.log('click');
+/*открыть попап*/
+function popupOpened() {
   popupTypeInfo.classList.add('popup_opened');
+}
+
+/*закрыть попап*/
+function popupClose() {
+  popupTypeInfo.classList.remove('popup_opened');
+}
+
+popupOpenEditBtn.addEventListener('click', () => {
+  popupOpened();
+  popupInputName.value = popupNameChange.textContent;
+  popupInputDescription.value = popupDescriptionChange.textContent;
 });
 
 popupCloseEditBtn.addEventListener('click', () => {
-  popupTypeInfo.classList.remove('popup_opened');
+  popupClose();
 });
 
 popupForm.addEventListener('submit', (Event) => {
   Event.preventDefault();
-  
-  const name = popupInputName.value;
-  popupNameChange.innerHTML = name;
-})
+  popupNameChange.textContent = popupInputName.value;
+  popupDescriptionChange.textContent =  popupInputDescription.value;
+  popupClose();
+});
 
-popupForm.addEventListener('submit', (Event) => {
-  Event.preventDefault();
-  
-  const description = popupInputDescription.value;
-  popupDescriptionChange.innerHTML = description;
-})
+
