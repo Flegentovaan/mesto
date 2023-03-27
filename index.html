@@ -23,7 +23,7 @@
           <div class="profile__info">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__description">Исследователь океана</p>
-            <button class="profile__edit-button profile__edit-button-opened" type="button"></button>
+            <button class="profile__edit-button" type="button"></button>
           </div>
         </div>
         <button class="profile__add-button" type="button"></button>
@@ -33,7 +33,7 @@
         <div class="element">
           <img
             src="https://images.unsplash.com/photo-1589786508359-0705881b10c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-            alt="Фото" class="element__image">
+            alt="Италия" class="element__image">
           <div class="element__group">
             <div class="element__group-container">
               <h2 class="element__text">Италия</h2>
@@ -45,7 +45,7 @@
         <div class="element">
           <img
             src="https://images.unsplash.com/photo-1622214374744-4c66c9176313?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-            alt="Фото" class="element__image">
+            alt="Германия" class="element__image">
           <div class="element__group">
             <div class="element__group-container">
               <h2 class="element__text">Германия</h2>
@@ -57,7 +57,7 @@
         <div class="element">
           <img
             src="https://images.unsplash.com/photo-1570667113707-e1df4c42251d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
-            alt="Фото" class="element__image">
+            alt="Франция" class="element__image">
           <div class="element__group">
             <div class="element__group-container">
               <h2 class="element__text">Франция</h2>
@@ -70,7 +70,7 @@
         <div class="element">
           <img
             src="https://images.unsplash.com/photo-1635088290933-d20c13566e39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-            alt="Фото" class="element__image">
+            alt="Лондон" class="element__image">
           <div class="element__group">
             <div class="element__group-container">
               <h2 class="element__text">Лондон</h2>
@@ -83,7 +83,7 @@
         <div class="element">
           <img
             src="https://images.unsplash.com/photo-1598306389672-6d4e435cc51d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
-            alt="Фото" class="element__image">
+            alt="Россия" class="element__image">
           <div class="element__group">
             <div class="element__group-container">
               <h2 class="element__text">Россия</h2>
@@ -96,7 +96,7 @@
         <div class="element">
           <img
             src="https://images.unsplash.com/photo-1630772063386-f363836989cc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
-            alt="Фото" class="element__image">
+            alt="Стокгольм" class="element__image">
           <div class="element__group">
             <div class="element__group-container">
               <h2 class="element__text">Стокгольм</h2>
@@ -114,11 +114,11 @@
     <div class="popup">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <button class="popup__close"></button>
+        <button class="popup__close" type="button"></button>
         <form class="popup__form" name="popupforma">
           <fieldset class="popup__form-container">
-            <input class="popup__input popup__input_name" type="text" name="name" required>
-            <input class="popup__input popup__input_description" type="text" name="description" required>
+            <input class="popup__input popup_name" type="text" name="name" required>
+            <input class="popup__input popup_description" type="text" name="description" required>
             <button class="popup__submit" type="submit">Сохранить</button>
           </fieldset>
         </form>
