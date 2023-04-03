@@ -1,4 +1,4 @@
-.elements {
+.card-grid {
   width: 100%;
   margin: 0 auto;
   padding-top: 51px;
@@ -9,14 +9,14 @@
 }
 
 @media screen and (max-width: 930px) {
-  .elements {
+  .card-grid {
    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
     justify-items: center;
   }
 }
 
 @media screen and (max-width: 540px) {
-  .elements {
+  .card-grid {
     display: flex;
     flex-direction: column;
     justify-content: center;
