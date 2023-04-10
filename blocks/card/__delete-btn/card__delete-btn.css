@@ -1,5 +1,6 @@
 .card__delete-btn {
   background-image: url('../../../images/yrna.svg');
+  background-repeat: no-repeat;
   background-color: transparent;
   border: none;
   width: 18px;
