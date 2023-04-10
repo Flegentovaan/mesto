@@ -10,7 +10,7 @@ const popupDescriptionChange = document.querySelector('.profile__description');
 /*открыть попап*/
 function popupOpened(popup) {
   popup.classList.add('popup_opened');
- }
+}
 
 /*закрыть попап*/
 function popupClose(popup) {
@@ -42,18 +42,17 @@ const popupOpenAddBtn = document.querySelector('.profile__add-button');
 const popupCard = document.querySelector('.popup_card');
 const popupCloseAddBtn = popupCard.querySelector('.popup__close');
 
- popupOpenAddBtn.addEventListener('click', () => {
+popupOpenAddBtn.addEventListener('click', () => {
   popupOpened(popupCard);
- });
+});
  
- popupCloseAddBtn.addEventListener('click', () => {
+popupCloseAddBtn.addEventListener('click', () => {
   popupClose(popupCard);
- });
+});
 
 //  создание карточки
 const cardTemplate = document.getElementById('card-template');
 const cardGrid = document.querySelector('.card-grid');
-const cardImage = document.querySelector('.card__image');
 const editCardBtn = document.querySelector('.profile__edit-button');
 const editCardForm = document.querySelector('.popup__form_edit_card');
 
@@ -68,8 +67,8 @@ const createCardElement = (cardData) => {
   cardImage.alt =  cardData.name;
 
 // лайк
-  const deleteBtn = cardElement.querySelector('.card__delete-btn');
-  const likeBtn = cardElement.querySelector('.card__like-btn');
+const deleteBtn = cardElement.querySelector('.card__delete-btn');
+const likeBtn = cardElement.querySelector('.card__like-btn');
 
   const handleDelete = () => {
     cardElement.remove();
@@ -106,17 +105,18 @@ const renderyCardElement = (cardElement) => {
   cardGrid.prepend(cardElement);
 }
 
+// перебрала массив
 initialCards.forEach((card) => {
-  renderyCardElement(createCardElement(card));
+  const newCard = createCardElement(card);
+  cardGrid.append(newCard);
 });
-
 
 // добавл карт
 const handleEditCardSubmit = (event) => {
   event.preventDefault();
 
-  const nameInput = editCardForm.querySelector('.popup__input_type_names');
-  const linkInput = editCardForm.querySelector('.popup__input_type_card-link');
+const nameInput = editCardForm.querySelector('.popup__input_type_names');
+const linkInput = editCardForm.querySelector('.popup__input_type_card-link');
 
   const name = nameInput.value;
   const link = linkInput.value;
@@ -126,11 +126,9 @@ const handleEditCardSubmit = (event) => {
     link,
   };
 
+
   renderyCardElement(createCardElement(cardData));
   popupClose(popupCard);
 };
 
 editCardForm.addEventListener('submit', handleEditCardSubmit);
- 
-
-
