@@ -39,7 +39,11 @@
       <p class="footer__copyright"> &copy; 2023 Анастасия Флегентова</p>
     </footer>
 
-    <div class="popup popup__profile">
+  </div>
+
+
+
+    <div class="popup popup_profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
         <button class="popup__close" type="button"></button>
@@ -53,51 +57,56 @@
       </div>
     </div>
 
-    <template id="card-template">
 
-      <div class="card">
-          <img
-            src="https://images.unsplash.com/photo-1589786508359-0705881b10c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-            alt="Италия" class="card__image">
-            <button class="card__delete-btn"></button>
-          <div class="card__group">
-            <div class="card__group-container">
-              <h2 class="card__text">Италия</h2>
-              <button class="card__like-btn card__like-btn_active" type="button"></button>
-            </div>
+  <div class="popup popup_card">
+    <div class="popup__container">
+      <h2 class="popup__title">Новое место</h2>
+      <button class="popup__close" type="button"></button>
+      <form class="popup__form popup__form_edit_card" name="popupforma">
+        <fieldset class="popup__form-container">
+          <input class="popup__input popup__input_type_names" type="text" name="name" required placeholder="Название">
+          <input class="popup__input popup__input_type_card-link" type="text" name="description" required placeholder="Ссылка на картинку">
+          <button class="popup__submit" type="submit">Создать</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <template id="card-template">
+    <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1589786508359-0705881b10c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+          alt="Италия"
+          class="card__image">
+          <button class="card__delete-btn"></button>
+        <div class="card__group">
+          <div class="card__group-container">
+            <h2 class="card__text">Италия</h2>
+            <button class="card__like-btn card__like-btn_active" type="button"></button>
           </div>
         </div>
-
-    </template>
-
-
-
-    <div class="popup popup__card">
-      <div class="popup__container">
-        <h2 class="popup__title">Новое место</h2>
-        <button class="popup__close" type="button"></button>
-        <form class="popup__form popup__form_edit_card" name="popupforma">
-          <fieldset class="popup__form-container">
-            <input class="popup__input popup__input_type_title" type="text" name="name" required placeholder="Название">
-            <input class="popup__input popup__input_type_card-link" type="text" name="description" required placeholder="Ссылка на картинку">
-            <button class="popup__submit" type="submit">Создать</button>
-          </fieldset>
-        </form>
       </div>
-    </div>
-  </div>
+  </template>
 
-  <div class="popup popup__card-image">
+
+  <div class="popup popup_image">
     <div class="popup__container-image">
-      <img src="" alt="" class="popup__image">
       <button class="popup__close"></button>
-      <p></p>
+      <figure class="popup__figure">
+        <img 
+        src="#" 
+        alt="#"
+        class="popup__image">
+      </figure>
+      <figcaption class="popup__caption"></figcaption>
     </div>
   </div>
+  
 
-</div>
 
-  <script src="./scripts/index.js"></script>
+<script src="./scripts/constants.js"></script>
+<script src="./scripts/index.js"></script>
+<script src="./scripts/qqq.js"></script>
 </body>
 
 </html>

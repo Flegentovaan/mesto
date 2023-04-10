@@ -1,0 +1,6 @@
+.card__group-container {
+  padding: 25px 15px 31px 21px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}

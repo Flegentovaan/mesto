@@ -1,0 +1,16 @@
+.card__delete-btn {
+  background-image: url('../../../images/yrna.svg');
+  background-color: transparent;
+  border: none;
+  width: 18px;
+  height: 19px;
+  cursor: pointer;
+  transition: .3s ease;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.card__delete-btn:hover {
+  opacity: 0.5;
+}
