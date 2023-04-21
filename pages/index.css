@@ -42,6 +42,30 @@
 @import url('../blocks/profile/__info/profile__info.css');
 @import url('../blocks/profile/__name/profile__name.css');
 
+.popup__input_type_invalid {
+  border-bottom: 1px solid #FF0000;
+}
+
+.popup__submit_disabled {
+  background-color: #fff;
+  color:  #C4C4C4;;
+  border: 1px solid  #C4C4C4;;
+  cursor: default;
+}
+
+
+.popup__error-message {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: red;
+  opacity: 0;
+  transition: .3s;
+}
+
+.popup__error-message_visible {
+  opacity: 1;
+}
 
 
 

@@ -2,7 +2,7 @@ const popupOpenEditBtn = document.querySelector('.profile__edit-button');
 const popupProfile = document.querySelector('.popup_profile');
 const popupCloseEditBtn = popupProfile.querySelector('.popup__close');
 const popupInputName = popupProfile.querySelector('.popup__input_type_name');
-const popupForm = popupProfile.querySelector('.popup__form');
+const popupFormProfile = popupProfile.querySelector('.popup__form_edit_profile');
 const popupNameChange = document.querySelector('.profile__name');
 const popupInputDescription = popupProfile.querySelector('.popup__input_type_description');
 const popupDescriptionChange = document.querySelector('.profile__description');
@@ -20,17 +20,27 @@ popupOpenEditBtn.addEventListener('click', () => {
   popupInputName.value = popupNameChange.textContent;
   popupInputDescription.value = popupDescriptionChange.textContent;
 });
+
 // обработчик событий для закр попапа профиль
 popupCloseEditBtn.addEventListener('click', () => {
   popupClose(popupProfile);
 });
+
+// закрытие попапа профиль нажатием на общую зону
+popupProfile.addEventListener('click', (e) => {
+  if(e.target === popupProfile) {
+    popupClose(popupProfile);
+  }
+});
+
 // обработчик событий для сохранения данных попапа профиль
-popupForm.addEventListener('submit', (Event) => {
+popupFormProfile.addEventListener('submit', (Event) => {
   Event.preventDefault();
   popupNameChange.textContent = popupInputName.value;
   popupDescriptionChange.textContent = popupInputDescription.value;
   popupClose(popupProfile);
 });
+
 // отр и закр карточки
 const popupOpenAddBtn = document.querySelector('.profile__add-button');
 const popupCard = document.querySelector('.popup_card');
@@ -41,11 +51,20 @@ popupOpenAddBtn.addEventListener('click', () => {
 popupCloseAddBtn.addEventListener('click', () => {
   popupClose(popupCard);
 });
+
+// закрытие попапа карочка нажатием на общую зону
+popupCard.addEventListener('click', (ev) => {
+  if(ev.target === popupCard) {
+    popupClose(popupCard);
+  }
+});
+
 //  создание карточки
 const cardTemplate = document.getElementById('card-template');
 const cardGrid = document.querySelector('.card-grid');
 const editCardBtn = document.querySelector('.profile__edit-button');
 const editCardForm = document.querySelector('.popup__form_edit_card');
+
 const createCardElement = (cardData) => {
   const cardElement = cardTemplate.content.querySelector('.card').cloneNode(true);
   const cardText = cardElement.querySelector('.card__text');
@@ -78,16 +97,24 @@ const createCardElement = (cardData) => {
   popupCloseImage.addEventListener('click', () => {
     popupClose(popupImage);
   });
+  // закрытие попапа изображение нажатием на общую зону
+  popupImage.addEventListener('click', (evt) => {
+  if(evt.target === popupImage) {
+    popupClose(popupImage);
+  }
+  });
   return cardElement;
 };
+
 const renderyCardElement = (cardElement) => {
     cardGrid.prepend(cardElement);
   }
-  // перебрала массив
+// перебрала массив
 initialCards.forEach((card) => {
   const newCard = createCardElement(card);
   cardGrid.append(newCard);
 });
+
 // добавл карт
 const handleEditCardSubmit = (event) => {
   event.preventDefault();
@@ -102,4 +129,5 @@ const handleEditCardSubmit = (event) => {
   renderyCardElement(createCardElement(cardData));
   popupClose(popupCard);
 };
+
 editCardForm.addEventListener('submit', handleEditCardSubmit);
